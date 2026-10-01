@@ -4,29 +4,29 @@
 <meta charset="UTF-8">
 <title>برنامه هفتگی</title>
 <style>
-  @page { size: A4 landscape; margin: 10mm; }
+  @page { size: A4 landscape; margin: 8mm; }
   * { box-sizing: border-box; }
   body {
     font-family: 'Tahoma', 'Vazirmatn', sans-serif;
     margin: 0;
-    padding: 15px;
+    padding: 10px;
     background: #fff;
   }
   .header {
     text-align: center;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
     border-bottom: 3px solid #333;
   }
   .header h1 {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 900;
-    margin: 0 0 5px 0;
+    margin: 0 0 4px 0;
     color: #222;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
   }
   .header h2 {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 700;
     margin: 0;
     color: #111;
@@ -39,36 +39,50 @@
   th {
     background: #2c3e50;
     color: #fff;
-    padding: 8px 4px;
-    font-size: 14px;
+    padding: 7px 3px;
+    font-size: 13px;
     border: 1px solid #34495e;
   }
   td {
     background: #fff;
     border: 1px solid #ccc;
-    padding: 6px 5px;
+    padding: 4px 4px;
     vertical-align: top;
-    height: 100px;
-    font-size: 11px;
+    height: 110px;
+    font-size: 10px;
   }
   .task {
-    display: block;
-    margin-bottom: 4px;
-    padding: 3px 5px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin-bottom: 3px;
+    padding: 3px 4px;
     border-radius: 4px;
     font-weight: 600;
     border-right: 4px solid;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    line-height: 1.3;
   }
+  .task .box {
+    flex-shrink: 0;
+    width: 11px;
+    height: 11px;
+    border: 1.5px solid #555;
+    border-radius: 2px;
+    background: #fff;
+    display: inline-block;
+  }
+  .task .icon { flex-shrink: 0; }
+  .task .txt { flex: 1; }
   .time {
-    font-size: 9px;
+    font-size: 8.5px;
     opacity: 0.75;
     display: block;
     font-weight: normal;
   }
   /* رنگ کارها */
+  .t-break  { background:#FBE9E7; color:#5D4037; border-color:#8D6E63; }
+  .t-study  { background:#FFF8E1; color:#5D4037; border-color:#FFA000; }
+  .t-free   { background:#F1F8E9; color:#33691E; border-color:#7CB342; }
   .t-prog   { background:#E3F2FD; color:#0D47A1; border-color:#1976D2; }
   .t-cinet  { background:#E8F5E9; color:#1B5E20; border-color:#388E3C; }
   .t-matlab { background:#FFF3E0; color:#E65100; border-color:#F57C00; }
@@ -108,84 +122,87 @@
     <tr>
       <!-- شنبه -->
       <td>
-        <span class="task t-prog">💻 برنامه‌سازی کامپیوتر<span class="time">۸:۰۰</span></span>
-        <span class="task t-cinet">⚗️ سینتیک و طراحی راکتور<span class="time">۱۲:۰۰</span></span>
-        <span class="task t-matlab"><img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" style="width:16px;vertical-align:middle;"> متلب<span class="time">۱۶:۰۰–۱۸:۰۰</span></span>
-        <span class="task t-python">🐍 پایتون<span class="time">۱۸:۳۰–۲۰:۰۰</span></span>
+        <span class="task t-break"><span class="box"></span><span class="icon">☕</span><span class="txt">صرف صبحانه<span class="time">۶:۰۰–۷:۰۰</span></span></span>
+        <span class="task t-prog"><span class="box"></span><span class="icon">💻</span><span class="txt">برنامه‌سازی کامپیوتر<span class="time">۸:۰۰</span></span></span>
+        <span class="task t-study"><span class="box"></span><span class="icon">📚</span><span class="txt">مطالعه دروس<span class="time">۱۰:۰۰–۱۲:۰۰</span></span></span>
+        <span class="task t-cinet"><span class="box"></span><span class="icon">⚗️</span><span class="txt">سینتیک و طراحی راکتور<span class="time">۱۲:۰۰</span></span></span>
+		<span class="task t-matlab"><span class="box"></span><span class="icon"><img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" style="width:14px;vertical-align:middle;"></span><span class="txt">متلب<span class="time">۱۶:۰۰–۱۸:۰۰</span></span></span>
+        <span class="task t-python"><span class="box"></span><span class="icon">🐍</span><span class="txt">پایتون<span class="time">۱۸:۳۰–۲۰:۰۰</span></span></span>
+        <span class="task t-free"><span class="box"></span><span class="icon">📖</span><span class="txt">مطالعه آزاد<span class="time">۲۲:۳۰–۲۳:۰۰</span></span></span>
       </td>
 
       <!-- یکشنبه -->
       <td>
-        <span class="task t-thermo">🔥 ترمودینامیک ۲<span class="time">۸:۰۰</span></span>
-        <span class="task t-work">🛠️ کارگاه نرم‌افزار مهندسی<span class="time">۱۰:۰۰</span></span>
-        <span class="task t-sport">🏃 تربیت بدنی<span class="time">۱۲:۰۰</span></span>
-        <span class="task t-nahj">📖 تفسیر نهج‌البلاغه<span class="time">۱۴:۰۰</span></span>
-        <span class="task t-matlab"><img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" style="width:16px;vertical-align:middle;"> متلب<span class="time">۱۸:۰۰–۲۰:۰۰</span></span>
-        <span class="task t-excel">📊 اکسل<span class="time">۲۰:۳۰–۲۱:۳۰</span></span>
+        <span class="task t-break"><span class="box"></span><span class="icon">☕</span><span class="txt">صرف صبحانه<span class="time">۶:۰۰–۷:۰۰</span></span></span>
+        <span class="task t-thermo"><span class="box"></span><span class="icon">🔥</span><span class="txt">ترمودینامیک ۲<span class="time">۸:۰۰</span></span></span>
+        <span class="task t-work"><span class="box"></span><span class="icon">🛠️</span><span class="txt">کارگاه نرم‌افزار مهندسی<span class="time">۱۰:۰۰</span></span></span>
+        <span class="task t-sport"><span class="box"></span><span class="icon">🏃</span><span class="txt">تربیت بدنی<span class="time">۱۲:۰۰</span></span></span>
+        <span class="task t-nahj"><span class="box"></span><span class="icon">📖</span><span class="txt">تفسیر نهج‌البلاغه<span class="time">۱۴:۰۰</span></span></span>
+        <span class="task t-matlab"><span class="box"></span><span class="icon"><img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" style="width:14px;vertical-align:middle;"></span><span class="txt">متلب<span class="time">۱۸:۰۰–۲۰:۰۰</span></span></span>
+        <span class="task t-excel"><span class="box"></span><span class="icon">📊</span><span class="txt">اکسل<span class="time">۲۰:۳۰–۲۱:۳۰</span></span></span>
+        <span class="task t-free"><span class="box"></span><span class="icon">📖</span><span class="txt">مطالعه آزاد<span class="time">۲۲:۳۰–۲۳:۰۰</span></span></span>
       </td>
-	<!-- دوشنبه -->
+
+      <!-- دوشنبه -->
       <td>
-        <span class="task t-prog">💻 برنامه‌سازی کامپیوتر<span class="time">۸:۰۰</span></span>
-        <span class="task t-cinet">⚗️ سینتیک و طراحی راکتور<span class="time">۱۲:۰۰</span></span>
-        <span class="task t-fluid">💧 مکانیک سیالات ۱<span class="time">۱۶:۰۰</span></span>
-        <span class="task t-excel">📊 اکسل<span class="time">۱۹:۳۰–۲۰:۳۰</span></span>
-        <span class="task t-python">🐍 پایتون<span class="time">۲۰:۴۵–۲۱:۳۰</span></span>
+        <span class="task t-break"><span class="box"></span><span class="icon">☕</span><span class="txt">صرف صبحانه<span class="time">۶:۰۰–۷:۰۰</span></span></span>
+        <span class="task t-prog"><span class="box"></span><span class="icon">💻</span><span class="txt">برنامه‌سازی کامپیوتر<span class="time">۸:۰۰</span></span></span>
+        <span class="task t-study"><span class="box"></span><span class="icon">📚</span><span class="txt">مطالعه دروس<span class="time">۱۰:۰۰–۱۲:۰۰</span></span></span>
+        <span class="task t-cinet"><span class="box"></span><span class="icon">⚗️</span><span class="txt">سینتیک و طراحی راکتور<span class="time">۱۲:۰۰</span></span></span>
+        <span class="task t-fluid"><span class="box"></span><span class="icon">💧</span><span class="txt">مکانیک سیالات ۱<span class="time">۱۶:۰۰</span></span></span>
+        <span class="task t-excel"><span class="box"></span><span class="icon">📊</span><span class="txt">اکسل<span class="time">۱۹:۳۰–۲۰:۳۰</span></span></span>
+        <span class="task t-python"><span class="box"></span><span class="icon">🐍</span><span class="txt">پایتون<span class="time">۲۰:۴۵–۲۱:۳۰</span></span></span>
+        <span class="task t-free"><span class="box"></span><span class="icon">📖</span><span class="txt">مطالعه آزاد<span class="time">۲۲:۳۰–۲۳:۰۰</span></span></span>
       </td>
 
       <!-- سه‌شنبه -->
       <td>
-        <span class="task t-matlab"><img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" style="width:16px;vertical-align:middle;"> متلب<span class="time">۶:۰۰–۸:۰۰</span></span>
-        <span class="task t-excel">📊 اکسل<span class="time">۱۰:۰۰–۱۱:۳۰</span></span>
-        <span class="task t-lab">🧪 آزمایشگاه شیمی عالی<span class="time">۱۴:۰۰</span></span>
-        <span class="task t-python">🐍 پایتون<span class="time">۱۷:۳۰–۱۹:۰۰</span></span>
+        <span class="task t-break"><span class="box"></span><span class="icon">☕</span><span class="txt">صرف صبحانه<span class="time">۸:۰۰–۹:۰۰</span></span></span>
+        <span class="task t-study"><span class="box"></span><span class="icon">📚</span><span class="txt">مطالعه دروس<span class="time">۹:۲۰–۱۱:۰۰</span></span></span>
+		<span class="task t-excel"><span class="box"></span><span class="icon">📊</span><span class="txt">اکسل<span class="time">۱۱:۲۰–۱۲:۴۵</span></span></span>
+        <span class="task t-lab"><span class="box"></span><span class="icon">🧪</span><span class="txt">آزمایشگاه شیمی آلی<span class="time">۱۴:۰۰</span></span></span>
+        <span class="task t-python"><span class="box"></span><span class="icon">🐍</span><span class="txt">پایتون<span class="time">۱۷:۳۰–۱۸:۳۰</span></span></span>
+        <span class="task t-study"><span class="box"></span><span class="icon">📚</span><span class="txt">مطالعه دروس<span class="time">۱۹:۰۰–۲۰:۳۰</span></span></span>
+        <span class="task t-study"><span class="box"></span><span class="icon">📚</span><span class="txt">مطالعه دروس<span class="time">۲۰:۴۵–۲۱:۳۰</span></span></span>
+        <span class="task t-free"><span class="box"></span><span class="icon">📖</span><span class="txt">مطالعه آزاد<span class="time">۲۲:۳۰–۲۳:۰۰</span></span></span>
       </td>
 
       <!-- چهارشنبه -->
       <td>
-        <span class="task t-matlab"><img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" style="width:16px;vertical-align:middle;"> متلب<span class="time">۶:۰۰–۸:۰۰</span></span>
-        <span class="task t-excel">📊 اکسل<span class="time">۱۰:۰۰–۱۱:۳۰</span></span>
-        <span class="task t-thermo">🔥 ترمودینامیک ۲<span class="time">۱۴:۰۰</span></span>
-        <span class="task t-fluid">💧 مکانیک سیالات ۱<span class="time">۱۶:۰۰</span></span>
-        <span class="task t-python">🐍 پایتون<span class="time">۱۹:۱۵–۲۰:۴۵</span></span>
+        <span class="task t-break"><span class="box"></span><span class="icon">☕</span><span class="txt">صرف صبحانه<span class="time">۸:۰۰–۹:۰۰</span></span></span>
+        <span class="task t-study"><span class="box"></span><span class="icon">📚</span><span class="txt">مطالعه دروس<span class="time">۹:۲۰–۱۱:۰۰</span></span></span>
+        <span class="task t-excel"><span class="box"></span><span class="icon">📊</span><span class="txt">اکسل<span class="time">۱۱:۲۰–۱۲:۴۵</span></span></span>
+        <span class="task t-thermo"><span class="box"></span><span class="icon">🔥</span><span class="txt">ترمودینامیک ۲<span class="time">۱۴:۰۰</span></span></span>
+        <span class="task t-fluid"><span class="box"></span><span class="icon">💧</span><span class="txt">مکانیک سیالات ۱<span class="time">۱۶:۰۰</span></span></span>
+        <span class="task t-python"><span class="box"></span><span class="icon">🐍</span><span class="txt">پایتون<span class="time">۱۹:۱۵–۲۰:۴۵</span></span></span>
+        <span class="task t-free"><span class="box"></span><span class="icon">📖</span><span class="txt">مطالعه آزاد<span class="time">۲۲:۳۰–۲۳:۰۰</span></span></span>
       </td>
 
       <!-- پنجشنبه -->
       <td>
-        <span class="task t-fluid2">📝 حل تمرین مکانیک سیالات ۱<span class="time">۱۰:۰۰–۱۲:۰۰</span></span>
-        <span class="task t-matlab"><img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" style="width:16px;vertical-align:middle;"> متلب<span class="time">۱۶:۰۰–۱۸:۰۰</span></span>
-        <span class="task t-python">🐍 پایتون<span class="time">۱۸:۳۰–۲۰:۰۰</span></span>
-        <span class="task t-nuc">⚛️ فیزیک هسته‌ای<span class="time">۲۰:۲۰–۲۱:۳۰</span></span>
+        <span class="task t-break"><span class="box"></span><span class="icon">☕</span><span class="txt">صرف صبحانه<span class="time">۶:۰۰–۷:۰۰</span></span></span>
+        <span class="task t-study"><span class="box"></span><span class="icon">📚</span><span class="txt">مطالعه دروس<span class="time">۷:۰۰–۸:۴۵</span></span></span>
+        <span class="task t-fluid2"><span class="box"></span><span class="icon">📝</span><span class="txt">حل تمرین مکانیک سیالات ۱<span class="time">۱۰:۰۰–۱۲:۰۰</span></span></span>
+        <span class="task t-matlab"><span class="box"></span><span class="icon"><img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" style="width:14px;vertical-align:middle;"></span><span class="txt">متلب<span class="time">۱۶:۰۰–۱۸:۰۰</span></span></span>
+        <span class="task t-python"><span class="box"></span><span class="icon">🐍</span><span class="txt">پایتون<span class="time">۱۸:۳۰–۲۰:۰۰</span></span></span>
+        <span class="task t-nuc"><span class="box"></span><span class="icon">⚛️</span><span class="txt">فیزیک هسته‌ای<span class="time">۲۰:۲۰–۲۱:۳۰</span></span></span>
+        <span class="task t-free"><span class="box"></span><span class="icon">📖</span><span class="txt">مطالعه آزاد<span class="time">۲۲:۳۰–۲۳:۰۰</span></span></span>
       </td>
 
       <!-- جمعه -->
       <td>
-        <span class="task t-matlab"><img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" style="width:16px;vertical-align:middle;"> متلب<span class="time">۶:۰۰–۸:۰۰</span></span>
-        <span class="task t-excel">📊 اکسل<span class="time">۱۰:۳۰–۱۱:۳۰</span></span>
-        <span class="task t-python">🐍 پایتون<span class="time">۱۱:۴۵–۱۳:۳۰</span></span>
-        <span class="task t-nuc">⚛️ فیزیک هسته‌ای<span class="time">۱۶:۰۰–۱۸:۰۰</span></span>
-        <span class="task t-digital">📱 عرضه دیجیتال<span class="time">۱۸:۳۰–۲۰:۳۰</span></span>
+        <span class="task t-matlab"><span class="box"></span><span class="icon"><img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" style="width:14px;vertical-align:middle;"></span><span class="txt">متلب<span class="time">۶:۰۰–۸:۰۰</span></span></span>
+<span class="task t-break"><span class="box"></span><span class="icon">☕</span><span class="txt">صرف صبحانه<span class="time">۸:۰۰–۹:۰۰</span></span></span>
+        <span class="task t-study"><span class="box"></span><span class="icon">📚</span><span class="txt">مطالعه دروس<span class="time">۹:۱۵–۱۱:۴۵</span></span></span>
+        <span class="task t-python"><span class="box"></span><span class="icon">🐍</span><span class="txt">پایتون<span class="time">۱۲:۰۰–۱۳:۳۰</span></span></span>
+        <span class="task t-nuc"><span class="box"></span><span class="icon">⚛️</span><span class="txt">فیزیک هسته‌ای<span class="time">۱۶:۰۰–۱۸:۰۰</span></span></span>
+        <span class="task t-digital"><span class="box"></span><span class="icon">📱</span><span class="txt">ارز دیجیتال / مطالعه دروس<span class="time">۱۸:۳۰–۲۰:۳۰</span></span></span>
+        <span class="task t-free"><span class="box"></span><span class="icon">📖</span><span class="txt">مطالعه آزاد<span class="time">۲۲:۳۰–۲۳:۰۰</span></span></span>
       </td>
     </tr>
   </tbody>
 </table>
 
 </body>
-</html>  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</html>
 
